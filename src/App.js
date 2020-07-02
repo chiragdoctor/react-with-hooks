@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [age, setAge] = useState(21);
+
+	const ageUpHandle = () => {
+		setAge(age + 1);
+	};
+
+	const ageDownHandle = () => {
+		setAge(age - 1);
+	};
+
+	return (
+		<div className='App'>
+			<header className='App-header'>
+				<h1>Use State Hook</h1>
+				<h2>Age: {age}</h2>
+				<button onClick={ageUpHandle}>Age +</button>
+				<button onClick={ageDownHandle}>Age -</button>
+			</header>
+		</div>
+	);
 }
 
 export default App;
