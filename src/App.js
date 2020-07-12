@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
+import NameTag from './components/NameTag';
 import './App.scss';
 
+const initialNames = [
+	{ firstName: 'peter', lastName: 'peterson' },
+	{ firstName: 'john', lastName: 'johnson' },
+	{ firstName: 'jill', lastName: 'jillson' },
+	{ firstName: 'john', lastName: 'johnson' },
+];
 function App() {
-	const [age, setAge] = useState(21);
-
-	const ageUpHandle = () => {
-		setAge(age + 1);
-	};
-
-	const ageDownHandle = () => {
-		setAge(age - 1);
-	};
-
+	const [names, setNames] = useState(initialNames);
 	return (
 		<div className='App'>
 			<header className='App-header'>
-				<h1>Use State Hook</h1>
-				<h2>Age: {age}</h2>
-				<button onClick={ageUpHandle}>Age +</button>
-				<button onClick={ageDownHandle}>Age -</button>
+				<h1 className='title'>Name List</h1>
+				{names.map((v, i) => {
+					return <NameTag key={`${v.firstName}${v.lastName}`} firstName={v.firstName} lastName={v.lastName} />;
+				})}
 			</header>
 		</div>
 	);
