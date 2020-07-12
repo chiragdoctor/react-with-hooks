@@ -1,25 +1,35 @@
-import React, { useState } from 'react';
-import NameTag from './components/NameTag';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 
-const initialNames = [
-	{ firstName: 'peter', lastName: 'peterson' },
-	{ firstName: 'john', lastName: 'johnson' },
-	{ firstName: 'jill', lastName: 'jillson' },
-	{ firstName: 'john', lastName: 'johnson' },
-];
+const initialProfile = {
+  followers: null,
+  publicRepos: null,
+};
+
 function App() {
-	const [names, setNames] = useState(initialNames);
-	return (
-		<div className='App'>
-			<header className='App-header'>
-				<h1 className='title'>Name List</h1>
-				{names.map((v, i) => {
-					return <NameTag key={`${v.firstName}${v.lastName}`} firstName={v.firstName} lastName={v.lastName} />;
-				})}
-			</header>
-		</div>
-	);
+  const [profile, setProfile] = useState(initialProfile);
+
+  const getProfile = async () => {
+    const response = await fetch('https://api.github.com/users/chiragdoctor');
+    const json = await response.json();
+    setProfile({
+      followers: json.followers,
+      publicRepos: json.public_repos,
+    });
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  return (
+    <div className='App'>
+      <header className='App-header'>
+        <h1 className='title'>Fetch Data</h1>
+        {`Followers: ${profile.followers} Public Repos: ${profile.publicRepos}`}
+      </header>
+    </div>
+  );
 }
 
 export default App;
