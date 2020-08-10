@@ -36,3 +36,24 @@
 .Link-active-style {
     color: green;
 }
+
+.ui-style {
+    display: flex;
+    flex-direction: row;
+}
+
+.li-style {
+    list-style-type: none;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid white;
+    align-items: center;
+}
+
+.button {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    color: green;
+}
