@@ -11,30 +11,30 @@ function App() {
           <ul>
             <li>
               <NavLink
-                className='app-link'
+                className='App-link'
                 to='/'
                 exact
-                activeClassName='link-active-style'
+                activeClassName='Link-active-style'
               >
                 Home
               </NavLink>
             </li>
             <li>
               <NavLink
-                className='app-link'
+                className='App-link'
                 to='/about'
                 exact
-                activeClassName='link-active-style'
+                activeClassName='Link-active-style'
               >
                 About
               </NavLink>
             </li>
             <li>
               <NavLink
-                className='app-link'
+                className='App-link'
                 to='/user/chirag/doctor'
                 exact
-                activeClassName='link-active-style'
+                activeClassName='Link-active-style'
               >
                 User Chirag doctor
               </NavLink>
