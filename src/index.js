@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import reducer from './store/reducer';
+import { createStore, combineReducers } from 'redux';
+import balanceReducer from './store/balanceReducer';
+import loanReducer from './store/loanReducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(reducer);
+const store = createStore(
+  combineReducers({
+    loanReducer,
+    balanceReducer,
+  }),
+);
 
 ReactDOM.render(
   <React.StrictMode>

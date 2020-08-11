@@ -1,0 +1,13 @@
+.button-style {
+    padding: 5px;
+    width: 200px;
+    color: #61dafb;
+    background: #565555;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.button-style:disabled {
+    background: #dddddd;
+}
