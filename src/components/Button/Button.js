@@ -2,6 +2,13 @@ import React from 'react';
 import '../styles/common.scss';
 import './Button.scss';
 
+/**
+ * @deprecated Don't use this button after 2019.
+ *
+ * @author [Chirag Doctor]
+ *
+ */
+
 const Button = ({ children, type, onClick = () => {} }) => {
   let localClass = '';
 
