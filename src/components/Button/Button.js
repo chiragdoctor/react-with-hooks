@@ -4,9 +4,8 @@ import './Button.scss';
 
 /**
  * @deprecated Don't use this button after 2019.
- *
  * @author [Chirag Doctor]
- *
+ * @version 1.0.1
  */
 
 const Button = ({ children, type, onClick = () => {} }) => {
